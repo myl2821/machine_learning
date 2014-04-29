@@ -27,7 +27,12 @@ for i = 1:n
     for j = 1:K
         distancebuffer(j) = norm(X(i,:) - centroids(j,:));
     end
-    idx(i) = find(distancebuffer == min(distancebuffer));
+    findres = find(distancebuffer == min(distancebuffer));
+    if size(findres,1) > 1
+        idx(i) = findres(1,ceil(rand() * size(findres,1)));
+    else
+        idx(i) = findres;
+    end
 end
 
 
