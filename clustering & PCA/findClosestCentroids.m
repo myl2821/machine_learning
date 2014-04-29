@@ -29,7 +29,7 @@ for i = 1:n
     end
     findres = find(distancebuffer == min(distancebuffer));
     if size(findres,1) > 1
-        idx(i) = findres(1,ceil(rand() * size(findres,1)));
+        idx(i) = findres(ceil(rand() * size(findres,1)),1);
     else
         idx(i) = findres;
     end
