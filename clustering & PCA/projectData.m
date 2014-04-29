@@ -18,6 +18,8 @@ Z = zeros(size(X, 1), K);
 %                    projection_k = x' * U(:, k);
 %
 
+Ureduce = U(:,1:K);     % Ureduce <- n * k matrix
+Z = X * Ureduce;        % Z <- m * k matrix 
 
 
 
